@@ -1,0 +1,32 @@
+<div>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Zerodha Statement</mat-card-title>
+    </mat-card-header>
+    <div class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>User ID</mat-label>
+        <input [(ngModel)]="data.userId" matInput placeholder="User ID">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input type="password" [(ngModel)]="data.password" matInput placeholder="Password">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Mobile App Code</mat-label>
+        <input [(ngModel)]="data.mobileAppCode" matInput placeholder="App Code">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>From Date</mat-label>
+        <input [(ngModel)]="data.dateFrom" matInput placeholder="From Date (YYYY-MM-DD)">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>To Date</mat-label>
+        <input [(ngModel)]="data.dateTo" matInput placeholder="To Date (YYYY-MM-DD)">
+      </mat-form-field>
+      <!-- <mat-form-field class="example-full-width"> -->
+        <button (click)="downloadStatement()" mat-stroked-button color="accent">Download</button>
+      <!-- </mat-form-field -->
+    </div>
+  </mat-card>
+</div>
