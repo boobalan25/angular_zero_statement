@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Data } from 'src/model/data';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-root',
@@ -33,6 +34,7 @@ export class AppComponent {
       alert('To Date is mandatory')
       return;
     }
+    this.data.password = CryptoJS.AES.encrypt(this.data.password, 'ZaRo-ENcRypt_kYe').toString();
     let headers = new HttpHeaders();
     headers = headers.append('content-type', 'application/json');
     this.http.post(environment.url, this.data, {responseType: 'blob', headers: headers}).pipe().subscribe((data: any) => {
